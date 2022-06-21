@@ -1,7 +1,9 @@
 <p align="center"><a href="#" target="_blank"><img src="https://github.com/darteos1/TechMan/blob/main/public/image/techman.png" width="400"></a></p>
 
 ##Projeto feito em sala do curso técnico de informática para internet.
+
 ##O projeto se consiste em fazer CRUD de itens e permissões para usuarios criarem ou não comentarios.
+
 ##Ao Clonar o Repositório
 
 Lembre de criar um .env copiar tudo do .env.exemple e configurar o banco de dados
