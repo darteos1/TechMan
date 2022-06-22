@@ -1,0 +1,21 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.equipIMG {
+    width: auto;
+    height: 220px;
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #cce2e2;
+}
+
+.equipBTN {
+    width: auto;
+    height: 40px;
+}
+
+.equipHR {
+    background-color: #44babc;
+	border-top: 2px dotted #8c8b8b;
+}
