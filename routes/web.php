@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentariosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Route::prefix('comentarios')->group(function(){
+    Route::get('/', [ComentariosController::class, 'index'])->name('comentarios-index');
+    Route::get('/create', [ComentariosController::class, 'create'])->name('comentarios-create');
+    Route::post('/', [ComentariosController::class, 'store'])->name('comentarios-store');
+    Route::get('/{id}/edit', [ComentariosController::class, 'edit'])->where('id','[0-9]+')->name('comentarios-edit');
+    Route::put('/{id}', [ComentariosController::class, 'update'])->where('id','[0-9]+')->name('comentarios-update');
+    Route::delete('/{id}', [ComentariosController::class, 'destroy'])->where('id','[0-9]+')->name('comentarios-destroy');
+    Route::get('/{id}', [ComentariosController::class, 'show'])->where('id','[0-9]+')->name('comentarios-show');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
