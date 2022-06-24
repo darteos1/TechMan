@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $comentarios = Comentario::orderby('data', 'desc')->get();
+        $comentarios = Comentario::orderby('id', 'desc')->get();
         $permissao = auth()->user()->permissao;
         return view('home', compact('permissao', 'comentarios'));
     }
