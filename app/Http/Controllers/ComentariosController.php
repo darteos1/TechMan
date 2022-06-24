@@ -112,6 +112,6 @@ class ComentariosController extends Controller
     public function destroy($id)
     {
         Comentario::where('id', $id)->delete();
-        return redirect()->route('comentarios-index');
+        return redirect()->route('home');
     }
 }
