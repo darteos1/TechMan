@@ -81,7 +81,7 @@ class ComentariosController extends Controller
         if (!empty($comentarios)) {
             return view('comentarios.edit', ['comentarios' => $comentarios]);
         } else {
-            return redirect()->route('comentarios-index');
+            return redirect()->route('home');
         }
     }
 
@@ -100,7 +100,7 @@ class ComentariosController extends Controller
             'comentario'=> $request->comentario,
         ];
         Comentario::where('id', $id)->update($data);
-        return redirect()->route('comentarios-index');
+        return redirect()->route('home');
     }
 
     /**

@@ -16,7 +16,7 @@
         <input name="data" type="date" class="form-control" id="floatingInput" value={{ now() }} hidden>
     </div>
     <div class="form-floating">
-        <textarea name="comentario" id="comentario" cols="50" rows="5" class="form-control" onchange="toggleButtom();"></textarea>
+        <textarea name="comentario" id="comentario" cols="50" rows="5" class="form-control" oninput="toggleButtom()"></textarea>
 
         <!-- <textarea id="comentario" cols="30" rows="10" class="form-control" placeholder="Digite seu comentário" onchange="toggleButtom()"></textarea> -->
         <label for="floatingInput">Comentário: </label>

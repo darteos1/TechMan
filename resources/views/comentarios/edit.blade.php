@@ -30,7 +30,7 @@
         </div>
         <div class="container d-flex justify-content-center" style="width: 300px;">
             <input type="submit" class="btn btn-light m-2 text-dark" name="submit" value="Atualizar">
-            <a href="{{ route('comentarios-index')}}" class="btn btn-success m-2 text-light">Voltar</a>
+            <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
         </div>
     </form>
 
