@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
 use App\Models\Equipamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -15,8 +16,9 @@ class EquipamentosController extends Controller
      */
     public function index()
     {
+        $comentarios = Comentario::all();
         $equipamentos = Equipamento::all();
-        return view('equipamentos.equipamentos', ['equipamentos' => $equipamentos]);
+        return view('equipamentos.equipamentos', ['equipamentos' => $equipamentos], ['comentarios' => $comentarios]);
     }
 
     /**
