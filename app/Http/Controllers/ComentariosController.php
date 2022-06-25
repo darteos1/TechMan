@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comentario;
+use App\Models\Equipamento;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,11 @@ class ComentariosController extends Controller
         // $id = auth()->user()->id;
         // $user = User::findorfail($id);
 
-        return view('comentarios.create');
+        $equipamentos = Equipamento::all();
+        $comentarios = Comentario::all();
+        return view('comentarios.create',['equipamentos' => $equipamentos], ['comentarios' => $comentarios]);;
+
+
     }
 
     /**
@@ -41,10 +46,12 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
+        Equipamento::all();
         Comentario::create([
             'permissao' => $request['permissao'],
             'data'=> $request['data'],
             'comentario'=> $request['comentario'],
+            'id_equipamento'=> $request['id_equipamento'],
         ]);
         return redirect()->route('home');
 
@@ -98,6 +105,7 @@ class ComentariosController extends Controller
             'permissao'=> $request->permissao,
             'data'=> $request->data,
             'comentario'=> $request->comentario,
+            'id_equipamento'=> $request->id_equipamento,
         ];
         Comentario::where('id', $id)->update($data);
         return redirect()->route('home');

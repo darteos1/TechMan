@@ -22,6 +22,7 @@
                                                 <h1 class="fs-4 text-primary">Comentários</h1>
                                                 <hr class="border border-primary">
                                                 <div class="row d-flex flex-row mb-3">
+                                                    @if($equipamento->id != $comentario->equipamento_id)
                                                     @foreach($comentarios as $comentario)
                                                     <ul class="list-group">
                                                         <li class="list-group-item border-0 fw-bold">{{$comentario->permissao}} - {{date('d/m/Y', strtotime($comentario->data))}}</li>
@@ -42,8 +43,8 @@
                                                         </li> -->
                                                         <hr class="border border-primary">
                                                     </ul>
-
                                                     @endforeach
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

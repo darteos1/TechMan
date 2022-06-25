@@ -17,10 +17,8 @@
     </div>
     <div class="form-floating">
         <textarea name="comentario" id="comentario" cols="50" rows="5" class="form-control" oninput="toggleButtom()"></textarea>
-
-        <!-- <textarea id="comentario" cols="30" rows="10" class="form-control" placeholder="Digite seu comentário" onchange="toggleButtom()"></textarea> -->
         <label for="floatingInput">Comentário: </label>
-    </div>
+    
     <div class="container mt-1" style="width: 440px;">
         <div class="form-group">
             <input type="submit" class="btn btn-primary m-2 text-light" name="submit" id="cadastrar" value="Cadastrar" disabled>

@@ -19,8 +19,9 @@
                 <input type="text" class="form-control" name="nome" id="" placeholder="Digite o nome do equipamento...">
             </div><br>
             <div class="form-group">
-                <label class="text-light" for="descricao">Descrição: </label>
-                <input type="text" class="form-control" name="descricao" id="" placeholder="Descreva o equipamento...">
+                <label class="text-light" for="descricao">Descrição: </label><br>
+                <textarea name="descricao" id="" cols="48" rows="5"></textarea>
+                <!-- <input type="text" class="form-control" name="descricao" id="" placeholder="Descreva o equipamento..."> -->
             </div><br>
         </div>
         <div class="container mt-1" style="width: 440px;">
@@ -31,5 +32,6 @@
         </div>
     </form>
 </div>
+
 
 @endsection

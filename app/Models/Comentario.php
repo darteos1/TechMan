@@ -12,5 +12,6 @@ class Comentario extends Model
         'permissao',
         'data',
         'comentario',
+        'id_equipamento'
     ];
 }
