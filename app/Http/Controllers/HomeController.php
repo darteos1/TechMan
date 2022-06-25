@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comentario;
+use App\Models\Equipamento;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $comentarios = Comentario::orderby('id', 'desc')->get();
+        $equipamentos = Equipamento::all();
         $permissao = auth()->user()->permissao;
-        return view('home', compact('permissao', 'comentarios'));
+        return view('equipamentos.equipamentos', compact('permissao', 'comentarios', 'equipamentos'));
     }
 }

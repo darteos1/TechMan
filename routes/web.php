@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComentariosController;
+use App\Http\Controllers\EquipamentosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,16 @@ Route::prefix('comentarios')->group(function(){
     Route::put('/{id}', [ComentariosController::class, 'update'])->where('id','[0-9]+')->name('comentarios-update');
     Route::delete('/{id}', [ComentariosController::class, 'destroy'])->where('id','[0-9]+')->name('comentarios-destroy');
     Route::get('/{id}', [ComentariosController::class, 'show'])->where('id','[0-9]+')->name('comentarios-show');
+});
+
+Route::prefix('equipamentos')->group(function(){
+    Route::get('/', [EquipamentosController::class, 'index'])->name('equipamentos-index');
+    Route::get('/create', [EquipamentosController::class, 'create'])->name('equipamentos-create');
+    Route::post('/', [EquipamentosController::class, 'store'])->name('equipamentos-store');
+    Route::get('/{id}/edit', [EquipamentosController::class, 'edit'])->where('id','[0-9]+')->name('equipamentos-edit');
+    Route::put('/{id}', [EquipamentosController::class, 'update'])->where('id','[0-9]+')->name('equipamentos-update');
+    Route::delete('/{id}', [EquipamentosController::class, 'destroy'])->where('id','[0-9]+')->name('equipamentos-destroy');
+    Route::get('/{id}', [EquipamentosController::class, 'show'])->where('id','[0-9]+')->name('equipamentos-show');
 });
 
 Auth::routes();
