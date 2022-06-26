@@ -59,11 +59,11 @@ class EquipamentosController extends Controller
 
         // return redirect() -> route('home');
 
-        $equipamentos = Equipamento::all();
-        return view('equipamentos.equipamentos', compact('equipamentos'));
+        // $equipamentos = Equipamento::all();
+        // return view('home');
 
-        // Paciente::create($request->all());
-        // return redirect()->route('pacientes-index');
+        // Equipamento::create($request->all());
+        return redirect()->route('equipamentos-index');
     }
 
     /**

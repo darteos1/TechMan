@@ -22,7 +22,6 @@
                                                 <h1 class="fs-4 text-primary">Comentários</h1>
                                                 <hr class="border border-primary">
                                                 <div class="row d-flex flex-row mb-3">
-                                                    @if($equipamento->id != $comentario->equipamento_id)
                                                     @foreach($comentarios as $comentario)
                                                     <ul class="list-group">
                                                         <li class="list-group-item border-0 fw-bold">{{$comentario->permissao}} - {{date('d/m/Y', strtotime($comentario->data))}}</li>
@@ -44,7 +43,7 @@
                                                         <hr class="border border-primary">
                                                     </ul>
                                                     @endforeach
-                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
@@ -56,11 +55,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <ul class="nav flex-column">
-                                    <li class="nav-item mt-2 mb-2">
-                                        <a class="nav-link btn btn-secondary text-light" aria-current="page" data-bs-toggle="modal" data-bs-target="#comentarios" href="#">Comentários</a>
-                                    </li>
-                                </ul> -->
                         </div>
                         <div class="col-md-10 text-center d-flex align-items-center d-flex justify-content-center shadow p-1 mb-1 bg-body rounded">
                             <p class="fs-1"><strong>{{ __('Seja bem vindo,') }}

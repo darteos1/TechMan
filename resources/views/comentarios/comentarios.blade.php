@@ -22,7 +22,6 @@
                     <h1 class="fs-4 text-primary">Comentários</h1>
                     <hr class="border border-primary">
                     <div class="row d-flex flex-row mb-3">
-                        @if($equipamento->id == comentarios->id_equipamento)
                         @foreach($comentarios as $comentario)
                         <ul class="list-group">
                             <li class="form-control list-group-item bg-secondary text-light fs-5">{{ $comentario->permissao }}</li>
@@ -46,7 +45,7 @@
                         </ul>
 
                         @endforeach
-                        @endif
+                        
                     </div>
                 </div>
             </div>

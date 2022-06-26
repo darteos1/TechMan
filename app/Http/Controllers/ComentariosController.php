@@ -16,8 +16,9 @@ class ComentariosController extends Controller
      */
     public function index()
     {
-        $comentarios = Comentario::orderby('id', 'desc')->get();
+        $comentarios = Comentario::orderby('data', 'asc')->get();
         return view('comentarios.comentarios', ['comentarios' => $comentarios]);
+
     }
 
     /**

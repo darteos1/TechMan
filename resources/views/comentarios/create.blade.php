@@ -18,12 +18,14 @@
     <div class="form-floating">
         <textarea name="comentario" id="comentario" cols="50" rows="5" class="form-control" oninput="toggleButtom()"></textarea>
         <label for="floatingInput">Comentário: </label>
-    
+    </div>
+    <div class="form-floating">
+        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value= {{ Auth::user()->id }} hidden><br>
+    </div>
     <div class="container mt-1" style="width: 440px;">
         <div class="form-group">
             <input type="submit" class="btn btn-primary m-2 text-light" name="submit" id="cadastrar" value="Cadastrar" disabled>
             <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
-            <!-- <button id="cadastrar">Enviar</button> -->
         </div>
     </div>
 </form>
