@@ -54,7 +54,7 @@ class ComentariosController extends Controller
             'comentario'=> $request['comentario'],
             'id_equipamento'=> $request['id_equipamento'],
         ]);
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', "Sucesso! Comentário cadastrado para o equipamento.");
 
     }
 

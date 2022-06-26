@@ -29,6 +29,13 @@
         </div>
     </div>
 </form>
+<div class="container-fluid">
+    <div class="row">
+        @if(session('msg'))
+        <p class="msg">{{ session('msg')}}</p>
+        @endif
+    </div>
+</div>
 
 <script>
     function toggleButtom() {
