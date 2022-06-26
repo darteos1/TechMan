@@ -15,8 +15,8 @@
         <div class="card-body mx-auto">
             <ul class="list-group border border-dark border-2">
 
-                <li class="list-group-item"><strong>Usuário:</strong> {{ $comentarios->usuario }}</li>
-                <li class="list-group-item"><strong>Perfil:</strong> {{ $comentarios->perfil }}</li>
+           
+                <li class="list-group-item"><strong>Perfil:</strong> {{ $comentarios->permissao }}</li>
                 <li class="list-group-item"><strong>Data:</strong> {{ $comentarios->data }}</li>
                 <li class="list-group-item"><strong>Comentário:</strong> {{ $comentarios->comentario }}</li>
 
@@ -27,7 +27,7 @@
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger m-2" type="submit">Deletar</button>
-                <a class="btn btn-secondary m-2 text-light" href="{{ route('comentarios-index') }}">Voltar</a>
+                <a class="btn btn-secondary m-2 text-light" href="{{ route('equipamentos-index') }}">Voltar</a>
             </form>
         </div>
     </div>

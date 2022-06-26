@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container" style="width: 440px;">
-    <h1 class="m-2 fs-3 alert alert-dark bg-dark text-light text-center">Cadastrar Novo Paciente</h1>
+    <h1 class="m-2 fs-3 alert alert-dark bg-dark text-light text-center">Cadastrar Novo Equipamento</h1>
 </div>
 <div class="container mt-1 bg-dark rounded" style="width: 400px;">
     <form action="{{ route('equipamentos-store') }}" method="POST" enctype="multipart/form-data">

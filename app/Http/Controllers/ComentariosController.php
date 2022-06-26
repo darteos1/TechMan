@@ -65,10 +65,11 @@ class ComentariosController extends Controller
      */
     public function show($id)
     {
+        $equipamentos = Equipamento::all();
         $comentarios = Comentario::where('id', $id)->first();
         if (!empty($comentarios))
         {
-            return view('comentarios.show', ['comentarios'=>$comentarios]);
+            return view('comentarios.show', ['comentarios'=>$comentarios],['equipamentos'=>$equipamentos]);
         }
         else
         {
