@@ -20,7 +20,9 @@
         <label for="floatingInput">Comentário: </label>
     </div>
     <div class="form-floating">
-        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value={{ Auth::user()->id }} hidden><br>
+        @foreach($equipamentos as $equipamento)
+        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value="{{$equipamento->id}}" hidden><br>
+        @endforeach
     </div>
     <div class="container mt-1">
         <div class="form-group border-0 ">
