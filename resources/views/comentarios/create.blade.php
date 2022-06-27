@@ -7,7 +7,7 @@
     <h3 id="comentario">Cadastrar Comentário</h3>
 </div>
 
-<form class="form-control" action="{{ route('comentarios-store') }}" method="POST">
+<form class="form-control border-0" action="{{ route('comentarios-store') }}" method="POST">
     @csrf
     <div class="form-floating">
         <input name="permissao" type="text" class="form-control" id="floatingInput" value={{ auth()->user()->permissao }} hidden><br>
@@ -22,13 +22,16 @@
     <div class="form-floating">
         <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value={{ Auth::user()->id }} hidden><br>
     </div>
-    <div class="container mt-1" style="width: 440px;">
-        <div class="form-group">
+    <div class="container mt-1">
+        <div class="form-group border-0 ">
+            <div class="row border border-0">
+                <div type="button" class="col-md-10 ms-3 bg-light position-relative" data-bs-toggle="modal" data-bs-target="#mensagem">
+                    <input type="submit" class="btn btn-primary m-2 text-light position-absolute top-50 start-50 translate-middle" name="submit" id="cadastrar" value="Cadastrar" disabled>
 
-            <div class="col-md-2 border border-right border-1">
-                <button type="button" class="btn btn-secondary ms-3 bg-light" data-bs-toggle="modal" data-bs-target="#mensagem">
-                    <input type="submit" class="btn btn-primary m-2 text-light" name="submit" id="cadastrar" value="Cadastrar" disabled>
-                </button>
+                </div>
+                <div class="position-relative mx-auto ms-2">
+                    <a href="{{ route('home')}}" class="btn btn-success m-2 text-light position-absolute top-50 start-50 translate-middle">Voltar</a>
+                </div>
                 <div class="modal fade" id="mensagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -39,6 +42,7 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <p><strong>Sucesso! Comentário cadastrado para o equipamento.</strong> </p>
+
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +55,7 @@
                 </div>
             </div>
 
-            <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
+
         </div>
     </div>
 </form>

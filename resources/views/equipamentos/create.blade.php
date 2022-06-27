@@ -27,7 +27,7 @@
         <div class="container mt-1" style="width: 440px;">
             <div class="form-group">
                 <input type="submit" class="btn btn-primary m-2 text-light" name="submit">
-                <a href="{{ route('equipamentos-index')}}" class="btn btn-success m-2 text-light">Voltar</a>
+                <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
             </div>
         </div>
     </form>
