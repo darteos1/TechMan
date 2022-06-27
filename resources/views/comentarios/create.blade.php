@@ -20,22 +20,41 @@
         <label for="floatingInput">Comentário: </label>
     </div>
     <div class="form-floating">
-        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value= {{ Auth::user()->id }} hidden><br>
+        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value={{ Auth::user()->id }} hidden><br>
     </div>
     <div class="container mt-1" style="width: 440px;">
         <div class="form-group">
-            <input type="submit" class="btn btn-primary m-2 text-light" name="submit" id="cadastrar" value="Cadastrar" disabled>
+
+            <div class="col-md-2 border border-right border-1">
+                <button type="button" class="btn btn-secondary ms-3 bg-light" data-bs-toggle="modal" data-bs-target="#mensagem">
+                    <input type="submit" class="btn btn-primary m-2 text-light" name="submit" id="cadastrar" value="Cadastrar" disabled>
+                </button>
+                <div class="modal fade" id="mensagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <p><strong>Sucesso! Comentário cadastrado para o equipamento.</strong> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-start">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
         </div>
     </div>
 </form>
-<div class="container-fluid">
-    <div class="row">
-        @if(session('msg'))
-        <p class="msg">{{ session('msg')}}</p>
-        @endif
-    </div>
-</div>
 
 <script>
     function toggleButtom() {

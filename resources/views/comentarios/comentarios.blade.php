@@ -45,13 +45,21 @@
                         </ul>
 
                         @endforeach
-                        
+
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-start">
                     <a href="{{ route('comentarios-create')}}" class="btn btn-dark mt-2">Adicionar Comentário</a>
+                    <div class="container-fluid">
+                        <div class="row">
+                            @if(session('msg'))
+                            <p class="msg">{{ session('msg')}}</p>
+                            @endif
+                            @yield('content')
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
