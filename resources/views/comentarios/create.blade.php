@@ -21,7 +21,7 @@
     </div>
     <div class="form-floating">
         @foreach($equipamentos as $equipamento)
-        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value="{{$equipamento->id}}" hidden><br>
+        <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value="{{ $equipamento->id }}" hidden><br>
         @endforeach
     </div>
     <div class="container mt-1">

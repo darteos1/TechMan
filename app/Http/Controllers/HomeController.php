@@ -25,7 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $id_equipamento = Equipamento::get('id');
         $comentarios = Comentario::orderby('id', 'desc')->where('id_equipamento',36)->get()->take(4);
         $equipamentos = Equipamento::all();
         $permissao = auth()->user()->permissao;

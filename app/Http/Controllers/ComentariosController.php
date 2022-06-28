@@ -47,6 +47,10 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
+        // $filler = $request->only('id');
+        // $equipamento = Equipamento::where($filler);
+        // $filler['id_equipamento'] = $equipamento->id;
+        // Comentario::create($filler);
         Equipamento::all();
         Comentario::create([
             'permissao' => $request['permissao'],
