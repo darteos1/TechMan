@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamento;
 use Illuminate\Http\Request;
 
 class EquipamentoController extends Controller
@@ -13,7 +14,8 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        return view('equipamento.index');
+        $equipamentos = Equipamento::all();
+        return view('equipamento.index', compact('equipamentos'));
     }
 
     /**
@@ -79,6 +81,7 @@ class EquipamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Equipamento::where('id', $id)->delete();
+        return redirect()->route('equipamento.index');
     }
 }
