@@ -14,19 +14,18 @@
         </div>
     </div>
     @foreach($equipamentos as $equipamento)
-    <div class="container mx-0">
-        <div class="row mx-0">
-            <div class="col-md-3 border border-dark mx-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 border border-dark">
                 <img src="{{ url($equipamento->imagem) }}" alt="imagem" style="width: 150px;height: 100px;margin: 20% 10%">
             </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="row ms-2 mb-3 fs-4 fw-bold">
+            <div class="col-md-8">
+                <div class="">
+                    <div class="ms-2 fs-4 fw-bold">
                         {{$equipamento->nome}}
                     </div>
-
                     <div>
-                        <textarea class="ms-2" name="descricao" id="" cols="100" rows="5">
+                        <textarea class="ms-0 text-left" name="descricao" id="" cols="100" rows="5">
                         {{$equipamento->descricao}}
                         </textarea>
                     </div>
@@ -35,8 +34,8 @@
                         <div class="col-md-4">
                             <form class="d-flex justify-content-start" action="{{ route('equipamentos-destroy', ['id'=>$equipamento->id]) }}" method="POST">
                                 @csrf
-                                <div class="col-md-2 mx-3">
-                                    <button type="button" class="btn btn-secondary ms-3 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#comentarios">
+                                <div class="col-md-2">
+                                    <button type="button" class="mx-2 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#comentarios">
                                         <img src="/img/comentario.png" alt="icon" style="width: 30px;">
                                     </button>
                                     <div class="modal fade" id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -70,7 +69,7 @@
                                     </div>
                                 </div>
                                 @method('DELETE')
-                                <button class="btn btn-secondary ms-0 bg-light border-0" type="submit">
+                                <button class="mx-2 bg-light border-0" type="submit">
                                     <img src="/img/deletar.png" alt="icon" style="width: 30px;">
                                 </button>
                             </form>
