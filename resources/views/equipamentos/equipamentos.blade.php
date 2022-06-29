@@ -41,11 +41,11 @@
                                     <div class="modal fade" id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content" style="background-color: #44BABC ;">
-                                                <div class="modal-header">
-                                                    <div class="d-md-flex justify-content-md-center">
-                                                        <h1 class="fs-4 text-primary text-light" style="background-color: #44BABC ;">COMENTÁRIOS</h1>
+                                                <div class="modal-header border border-0" style="text-align: center;">
+                                                    <div class="mx-auto">
+                                                        <h1 class="fs-4 text-light" style="background-color: #44BABC;">COMENTÁRIOS</h1>
                                                     </div>
-                                                    <button type="button" class="btn-close light" data-bs-dismiss="modal" aria-label="Close" style="background-color: #ffff ;"></button>
+                                                    <button type="button" class="btn-close light mx-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #ffff ;"></button>
                                                 </div>
                                                 <div class="modal-body" style="background-color: #44BABC ;">
                                                     <div class="container">
@@ -55,14 +55,14 @@
                                                                 <li class="list-group-item border-0 fw-bold text-light text-center" style="background-color: #44BABC ;">{{$comentario->permissao}} </li>
                                                                 <li class="list-group-item fst-italic border-0 text-light text-center" style="background-color: #44BABC ;">{{$comentario->comentario}}</li>
                                                                 <li class="list-group-item border-0 fw-bold text-light text-center" style="background-color: #44BABC ;">{{date('d/m/Y', strtotime($comentario->data))}}</li>
-                                                                <hr class="border border-light">
+                                                                <hr class="border border-1 border-light">
                                                             </ul>
                                                             @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-center">
+                                                <div class="modal-footer border border-0">
+                                                    <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-center ">
                                                         <a href="{{ route('comentarios-create')}}" class="btn text-light mt-2" style="background-color: #35797D;">Adicionar Comentário</a>
                                                     </div>
                                                 </div>

@@ -66,7 +66,9 @@
     function toggleButtom() {
         const comentario = document.querySelector("#comentario").value;
 
-        if (comentario === "") {
+
+
+        if (comentario === "" || comentario === null) {
             document.querySelector("#cadastrar").disabled = true;
         }
         document.querySelector("#cadastrar").disabled = false;
