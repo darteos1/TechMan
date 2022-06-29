@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $comentarios = Comentario::orderby('id', 'desc')->where('id_equipamento',28)->get()->take(4);
+        $comentarios = Comentario::orderby('data', 'desc')->where('id_equipamento',34)->get()->take(4);
         $equipamentos = Equipamento::all();
         $permissao = auth()->user()->permissao;
         return view('equipamentos.equipamentos', compact('permissao', 'comentarios', 'equipamentos'));
