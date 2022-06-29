@@ -59,6 +59,6 @@ function clean() {
 }
 
 function mostrarSenha(){
-  document.getElementById('password').type == 'password' ? document.getElementById('password').type = 'number' : document.getElementById('password').type = 'password'
+  document.getElementById('password').type == 'password' ? document.getElementById('password').type = 'text' : document.getElementById('password').type = 'password'
 
 }

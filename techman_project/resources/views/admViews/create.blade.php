@@ -4,7 +4,7 @@
 
 <h1 class="m-5">Adicionar cadastro</h1>
 
-<form action="{{ route('store') }}" method="POST">
+<form action="{{ route('store-user') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="m-5">
         <div>

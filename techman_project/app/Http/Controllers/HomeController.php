@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\model_equipamentos;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -26,8 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $usuario = User::all();
+        $equipamentos = model_equipamentos::all();
         $permissao = auth()->user()->permission;
-        return view('home', compact('usuario', 'permissao'));
+        return view('home', compact('usuario', 'permissao', 'equipamentos'));
     }
 
     /**
@@ -57,4 +59,5 @@ class HomeController extends Controller
 
         return redirect() -> route('home');
     }
+
 }
