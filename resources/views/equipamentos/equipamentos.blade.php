@@ -40,28 +40,30 @@
                                     </button>
                                     <div class="modal fade" id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
-                                            <div class="modal-content">
+                                            <div class="modal-content" style="background-color: #44BABC ;">
                                                 <div class="modal-header">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <div class="d-md-flex justify-content-md-center">
+                                                        <h1 class="fs-4 text-primary text-light" style="background-color: #44BABC ;">COMENTÁRIOS</h1>
+                                                    </div>
+                                                    <button type="button" class="btn-close light" data-bs-dismiss="modal" aria-label="Close" style="background-color: #ffff ;"></button>
                                                 </div>
-                                                <div class="modal-body">
+                                                <div class="modal-body" style="background-color: #44BABC ;">
                                                     <div class="container">
-                                                        <h1 class="fs-4 text-primary">Comentários</h1>
-                                                        <hr class="border border-primary">
-                                                        <div class="row d-flex flex-row mb-3">
+                                                        <div class="row d-flex flex-row mb-3" style="background-color: #44BABC ;">
                                                             @foreach($comentarios as $comentario)
                                                             <ul class="list-group">
-                                                                <li class="list-group-item border-0 fw-bold">{{$comentario->permissao}} - {{date('d/m/Y', strtotime($comentario->data))}}</li>
-                                                                <li class="list-group-item fst-italic border-0">{{$comentario->comentario}}</li>
-                                                                <hr class="border border-primary">
+                                                                <li class="list-group-item border-0 fw-bold text-light text-center" style="background-color: #44BABC ;">{{$comentario->permissao}} </li>
+                                                                <li class="list-group-item fst-italic border-0 text-light text-center" style="background-color: #44BABC ;">{{$comentario->comentario}}</li>
+                                                                <li class="list-group-item border-0 fw-bold text-light text-center" style="background-color: #44BABC ;">{{date('d/m/Y', strtotime($comentario->data))}}</li>
+                                                                <hr class="border border-light">
                                                             </ul>
                                                             @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-start">
-                                                        <a href="{{ route('comentarios-create')}}" class="btn btn-dark mt-2">Adicionar Comentário</a>
+                                                    <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-center">
+                                                        <a href="{{ route('comentarios-create')}}" class="btn text-light mt-2" style="background-color: #35797D;">Adicionar Comentário</a>
                                                     </div>
                                                 </div>
                                             </div>
