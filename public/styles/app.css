@@ -1,0 +1,9 @@
+.menu {
+    width: 5rem;
+    height: 25rem;
+}
+
+.menu button {
+    border-radius: 4rem;
+    background-color: #44BABC;
+}

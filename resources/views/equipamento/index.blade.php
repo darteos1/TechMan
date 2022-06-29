@@ -59,20 +59,20 @@
                             <div class="modal fade" id="ModalExcluir" tabindex="-1" aria-labelledby="ModalExcluir" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Exclusão de Equipamento</h5>
+                                        <div class="modal-header border-0">
+                                            <h5 id="exampleModalLabel" class="fw-semibold modal-title" style="margin-left: 9rem; color: white;">EXCLUSÃO DE ITENS</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
 
-                                        <div class="modal-body">
-                                            <p>Atenção! Tem certeza que deseja excluir o equipamento? Essa ação não poderá ser desfeita.</p>
+                                        <div class="d-flex modal-body">
+                                            <p class="fw-semibold mx-auto mb-0" style="color: white;">TEM CERTEZA QUE DESEJA EXCLUIR ESTE ITEM?</p>
                                         </div>
 
-                                        <div class="modal-footer justify-content-start">
-                                            <form action="{{ route('equipamento.destroy', ['equipamento' => $equipamento->id]) }}" method="POST">
+                                        <div class="d-flex modal-footer border-0 justify-content-start">
+                                            <form class="mx-auto" action="{{ route('equipamento.destroy', ['equipamento' => $equipamento->id]) }}" method="POST">
                                             @csrf
                                             @method('delete')
-                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                                <button type="submit" class="btn rounded-0 fw-semibold" style="color: white; background-color: #35797D; font-size: smaller;">REMOVER</button>
                                             </form>
                                         </div>
                                     </div>
