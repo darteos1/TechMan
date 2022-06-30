@@ -7,7 +7,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-secondary ms-3 bg-light" data-bs-toggle="modal" data-bs-target="#comentarios">
     <img src="/img/comment.png" alt="icon" style="width: 30px;">
-
 </button>
 
 <!-- Modal -->
@@ -29,7 +28,6 @@
                             <li class="list-group-item fst-italic border-0">{{$comentario->comentario}}</li>
                             <hr class="border border-primary">
                         </ul>
-
                         @endforeach
 
                     </div>

@@ -3,10 +3,13 @@
 @section('title', 'Novo Comentário')
 
 @section('content')
-<div class="container-sm bg-success" style="width: 600px;">
-    <h3 id="comentario">Cadastrar Comentário</h3>
+<div class="container w-50 mx-auto mt-1 text-light text-center" style="height: 300px;background-color: #44BABC ;">
+    <div>
+        <h3 class="titulo mt-5">COMENTÁRIO</h3>
+        <h4>DIGITE SEU COMENTÁRIO</h4>
+    </div>
 
-    <form class="form-control border-0 mx-auto" action="{{ route('comentarios-store') }}" method="POST" style="width: 400px;">
+    <form class="form-control border-0 mb-auto" action="{{ route('comentarios-store') }}" method="POST" style="background-color: #44BABC ;">
         @csrf
         <div class="form-floating">
             <input name="permissao" type="text" class="form-control" id="floatingInput" value={{ auth()->user()->permissao }} hidden><br>
@@ -23,15 +26,12 @@
             <input name="id_equipamento" type="text" class="form-control" id="floatingInput" value="{{ $equipamento->id }}" hidden><br>
             @endforeach
         </div>
-        <div class="container mt-1">
-            <div class="form-group border-0 ">
-                <div class="row border border-0">
-                    <div type="button" class="col-md-10 ms-3 bg-light position-relative" data-bs-toggle="modal" data-bs-target="#mensagem">
-                        <input type="submit" class="btn btn-primary m-2 text-light position-absolute top-50 start-50 translate-middle" name="submit" id="cadastrar" value="Cadastrar" disabled>
-
-                    </div>
-                    <div class="position-relative mx-auto ms-2">
-                        <a href="{{ route('home')}}" class="btn btn-success m-2 text-light position-absolute top-50 start-50 translate-middle">Voltar</a>
+        <div class="container">
+            <div class="form-group w-50">
+                <div class="row mx-auto">
+                    <div class="form-item mx-auto" type="button" data-bs-toggle="modal" data-bs-target="#mensagem">
+                        <input type="submit" class="btn btn-primary text-light ms-5" name="submit" id="cadastrar" value="Cadastrar" disabled>
+                        <a href="{{ route('home')}}" class="btn btn-success m-2 text-light">Voltar</a>
                     </div>
                     <div class="modal fade" id="mensagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -63,8 +63,6 @@
 <script>
     function toggleButtom() {
         const comentario = document.querySelector("#comentario").value;
-
-
 
         if (comentario === "" || comentario === null) {
             document.querySelector("#cadastrar").disabled = true;

@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app w-50">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <img src="/img/techman.png" class="ms-3" alt="logo" style="width: 150px;">
             <p class="mt-3 ms-2 fs-5"><a class="text-decoration-none text-dark" href="#"></a></p>
@@ -89,11 +89,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+
 
         @yield('content')
 
-        </main>
+
 
     </div>
 

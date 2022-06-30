@@ -35,6 +35,7 @@
                             <form class="d-flex justify-content-start" action="{{ route('equipamentos-destroy', ['id'=>$equipamento->id]) }}" method="POST">
                                 @csrf
                                 <div class="col-md-2">
+                                    <!-- Modal para Visualizar os comentários -->
                                     <button type="button" class="mx-2 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#comentarios">
                                         <img src="/img/comentario.png" alt="icon" style="width: 30px;">
                                     </button>
