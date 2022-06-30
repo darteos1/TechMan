@@ -1,0 +1,72 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    height: 100vh;
+    width: 100vw;
+    background-color: #44BABC;
+}
+
+.btn-style1
+{
+    color: #FFFFFF;
+    border-radius: 0;
+    background-color: #35797D;
+}
+
+.modal-content
+{
+    color: #35797D;
+}
+
+.btn-style1:hover
+{
+    color: #35797D;
+    border-radius: 0;
+    background-color: #FFFFFF;
+    border: 1px solid #35797D;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #44BABC;
+    border-color: #44BABC;
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
+}
+
+.btn-close
+{
+    border: none;
+    background: transparent;
+    color: #35797D;
+    font-size: 32px;
+}
+
+.btn-close:hover
+{
+    border: none;
+    background: transparent;
+    color: #44BABC;
+    font-size: 32px;
+}
+
+.textcomentario
+{
+    font-size: 12px;
+}
+
+.datacomentario
+{
+    font-size: 12px;
+    opacity: 80%;
+}
