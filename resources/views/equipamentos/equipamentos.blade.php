@@ -64,70 +64,64 @@
     @foreach($equipamentos as $equipamento)
     @if($equipamento->status == 'ativo')
 
-<ul style="padding: 0rem 13rem; list-style-type: none;">   
-    <li>
-        <div class="d-flex">
-        
-            
-
-                    <div class="d-flex">
-                        <img class="me-3" src='{{ url($equipamento->imagem) }}' alt="Imagem de um equipamento">
-                        <div class="flex-column flex-grow-1" style="margin-right: 6rem;">
-                            <h3 class="fs-5 fw-semibold" style="color: #44babc;">{{ $equipamento->nome }}</h3>
-                            
-                        </div>
-                        <div>
-                            <textarea class="ms-2" name="descricao" id="" cols="50" rows="5">
-                            {{$equipamento->descricao}}
-                            </textarea>
-                        </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <form class="d-flex justify-content-start" action="{{ route('equipamentos-destroy', ['id'=>$equipamento->id]) }}" method="POST">
-                                @csrf
-                                <div class="col-md-2 mx-3">
-                                    {{-- comentar --}}
-                                    <button type="button" class="btn btn-secondary ms-3 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#comentarios">
-                                        <img src="/img/comentario.png" alt="icon" style="width: 30px;">
-                                    </button>
-
-                                    {{-- Excluir --}}                                    
-                                    <a href="" class="btn btn-secondary ms-3 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#modalExcluir">
-                                        <img style="width: 30px;" src="/img/deletar.png" alt="icon">
-                                    </a>
-                                    {{-- Modal Comentario --}}
-                                    <div class="modal fade" id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="container">
-                                                        <h1 class="fs-4 text-primary">Comentários</h1>
-                                                        <hr class="border border-primary">
-                                                        <div class="row d-flex flex-row mb-3">
-                                                            @foreach($comentarios as $comentario)
-                                                            <ul class="list-group">
-                                                                <li class="list-group-item border-0 fw-bold">{{$comentario->permissao}} - {{date('d/m/Y', strtotime($comentario->data))}}</li>
-                                                                <li class="list-group-item fst-italic border-0">{{$comentario->comentario}}</li>
-                                                                <hr class="border border-primary">
-                                                            </ul>
-                                                            @endforeach
-                                                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <img class="me-3" src='{{ url($equipamento->imagem) }}' alt="Imagem de um equipamento">
+                    <div class="flex-column flex-grow-1" style="margin-right: 6rem;">
+                        <h3 class="fs-5 fw-semibold" style="color: #44babc;">{{ $equipamento->nome }}</h3>
+                    </div>
+                    <div>
+                        <textarea class="ms-2" name="descricao" id="" cols="50" rows="5">
+                        {{$equipamento->descricao}}
+                        </textarea>
+                    </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form class="d-flex justify-content-start" action="{{ route('equipamentos-destroy', ['id'=>$equipamento->id]) }}" method="POST">
+                            @csrf
+                            <div class="col-md-2 mx-3">
+                                {{-- comentar --}}
+                                <button type="button" class="btn btn-secondary ms-3 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#comentarios">
+                                    <img src="/img/comentario.png" alt="icon" style="width: 30px;">
+                                </button>
+                                {{-- Excluir --}}                                    
+                                <a href="" class="btn btn-secondary ms-3 bg-light border border-0" data-bs-toggle="modal" data-bs-target="#modalExcluir">
+                                    <img style="width: 30px;" src="/img/deletar.png" alt="icon">
+                                </a>
+                                {{-- Modal Comentario --}}
+                                <div class="modal fade" id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                                                    <h1 class="fs-4 text-primary">Comentários</h1>
+                                                    <hr class="border border-primary">
+                                                    <div class="row d-flex flex-row mb-3">
+                                                        @foreach($comentarios as $comentario)
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item border-0 fw-bold">{{$comentario->permissao}} - {{date('d/m/Y', strtotime($comentario->data))}}</li>
+                                                            <li class="list-group-item fst-italic border-0">{{$comentario->comentario}}</li>
+                                                            <hr class="border border-primary">
+                                                        </ul>
+                                                        @endforeach
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-start">
-                                                        <a href="{{ route('comentarios-create')}}" class="btn btn-dark mt-2">Adicionar Comentário</a>
-                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="col-sm-12 d-grid gap-2 d-md-flex justify-content-md-start">
+                                                    <a href="{{ route('comentarios-create')}}" class="btn btn-dark mt-2">Adicionar Comentário</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            {{-- Modal exluir --}}
+                            </div>
+                                {{-- Modal exluir --}}
                                 <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content rounded-0">
@@ -151,22 +145,23 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>     
-                            </form>
-                        </div>
+                                </div>  
+                            </div>   
+                        </form>
+                        
                     </div>
                 </div>
             </div><br>
-
         </div>
+    </div>
         <hr class="border border-primary border-2">
-    </li>
+    
         @endif
         @endforeach
         
-        </div>
-    </div>
-</ul>
+        
+    
+
 
 
 @endsection
