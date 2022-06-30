@@ -35,11 +35,21 @@ class controller_equipamentos extends Controller
      */
     public function store(Request $request)
     {
+        $foto = $request->hasFile('foto_equipamento');
+        
+        $fotoName = time().'.'.$request->foto_equipamento->extension();
+        $upload = $request->foto_equipamento->move(public_path('images'), $fotoName);
+
+        if(!$upload)
+        {
+            return redirect()->back()->with('error', 'upload falhou')->withInput();
+        }
 
         model_equipamentos::create([
-            'nome_equipamento' => $request['nome_equipamento'],
-            'descricao_equipamento' => $request['descricao_equipamento'],
-            'switch_equipamento' => $request['switch_equipamento']
+            'foto_equipamento' => $fotoName,
+            'nome_equipamento' => $request-> nome_equipamento,
+            'descricao_equipamento' => $request->descricao_equipamento,
+            'switch_equipamento' => $request->switch_equipamento
         ]);
         
         return redirect() -> route('home');

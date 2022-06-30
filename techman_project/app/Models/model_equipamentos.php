@@ -12,6 +12,7 @@ class model_equipamentos extends Model
     public $table = 'equipamento';
 
     protected $fillable = [
+        'foto_equipamento',
         'nome_equipamento',
         'descricao_equipamento',
         'switch_equipamento'

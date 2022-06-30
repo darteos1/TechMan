@@ -1,6 +1,18 @@
   // Desabilita o botão.
 document.getElementById("botao").disabled = true;
 
+function enableBtn(){
+  const img = document.querySelector('#foto_equipamento').value
+  const nome = document.querySelector('#nome_equipamento').value
+  const descricao = document.querySelector('#descricao_equipamento').value
+  
+  if(img && nome && descricao){
+    return document.querySelector("#btn-modal").disabled = false;
+  }
+
+  document.querySelector("#btn-modal").disabled = true;
+}
+
 function insert(num) {
 
   // numero recebe o conteúdo do elemento HTML 'div' atráves do id 'resultado'.

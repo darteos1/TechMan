@@ -21,11 +21,12 @@
         <thead>
             <tr>
                 <th scope="col">Id</th>
+                <th scope="col">Foto do Equipamento</th>
                 <th scope="col">Nome do Equipamento</th>
                 <th scope="col">Descrição do Equipamento</th>
                 <th scope="col">Status</th>
+                <th scope="col">Data/Hora do Cadastro</th>
                 <th scope="col">...</th>
-                <th scope="col"></th>
             </tr>
         </thead>
 
@@ -33,9 +34,11 @@
             @foreach($equipamentos as $equipamento)
                 <tr>
                     <td>{{ $equipamento->id }}</td>
+                    <td><img width="250px" src="images/{{ $equipamento->foto_equipamento }}"></td>
                     <td>{{ $equipamento->nome_equipamento }}</td>
                     <td>{{ $equipamento->descricao_equipamento }}</td>
                     <td>{{ $equipamento->switch_equipamento }}</td>
+                    <td>{{ $equipamento->created_at }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -56,12 +59,17 @@
                     </div>
                     <div class="modal-body mx-3">
                         <div class="mb-3">
+                            <label for="foto_equipamento" class="form-label">Foto</label>
+                            <input onchange="enableBtn()" type="file" class="form-control" id="foto_equipamento" name="foto_equipamento">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="nome_equipamento" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome_equipamento" name="nome_equipamento" placeholder="Digite o nome do equipamento...">
+                            <input onchange="enableBtn()" type="text" class="form-control" id="nome_equipamento" name="nome_equipamento" placeholder="Digite o nome do equipamento...">
                         </div>
                         <div class="mb-3">
                             <label for="descricao_equipamento" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricao_equipamento" name="descricao_equipamento" rows="3"></textarea>
+                            <textarea onchange="enableBtn()" class="form-control" id="descricao_equipamento" name="descricao_equipamento" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3">                           
@@ -73,7 +81,7 @@
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button class="shadow btn btn-style1" type="submit">Cadastrar</button>
+                        <button disabled id="btn-modal" class="shadow btn btn-style1">Cadastrar</button>
                     </div>
                 </div>
             </div>
