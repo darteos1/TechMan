@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#logo {
+    width: 10vw;
+    margin-top: 2.5vh;
+}
+
+#ilustration {
+    width: 50vw;
+}
+
+#sec-1 {
+    height: 100vh;
+}
+
+#sec-2 {
+    color: #FFFFFF;
+    background-color: #44BABC;
+    height: 100vh;
+}
+
+#texto-entrar {
+    margin-top: 2.5vh;
+    font-size: 5vw;
+}
+
+#sec-2 .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#sec-2 .form-group #icone-1,
+#icone-2 {
+
+    position: absolute;
+    left: 0;
+    background: transparent;
+    font-size: 2.5vmin;
+    color: #FFFFFF;
+}
+
+#sec-2 #input-1,
+#input-2 {
+    height: 5vh;
+    margin-top: 2vh;
+    padding-left: 4vmin;
+    background: transparent;
+    color: #FFFFFF !important;
+    font-size: 1.5vmin;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+#sec-2 #input-1::placeholder,
+#input-2::placeholder {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#sec-2 #input-1:focus,
+#input-2:focus,
+#input-1:active,
+#input-2:active {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent;
+    border-color: #c2e7f2;
+    color: #c2e7f2;
+    text-align: center;
+}
+
+#sec-2-row-2 {
+    margin-top: 10vh;
+}
+
+
+.calculator  button
+{
+    height: 60px;
+    font-size: 3vmin !important;
+    color: #FFFFFF;
+}
+
+.calculator-keys
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.gerenciamento
+{
+    color: #44BABC;
+    font-weight: bold;
+    font-size: 8vmin;
+    margin-top: 7vh;
+}
+
+.calculator button:hover
+{
+    background-color: #35797d;
+}
+
+.calculator .btn, .btn:focus {
+    border: none;
+}
+#botao_submit{
+    transition-property: transform, background-color;
+    transition-duration: 1.5s;
+}
+#botao_submit:hover{
+    transform: scaleX(1.2) scaleY(1.2);
+}
