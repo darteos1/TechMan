@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comentario;
+use App\Models\Equipamento;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class ComentariosController extends Controller
      */
     public function index()
     {
-        $comentarios = Comentario::orderby('data', 'desc')->get();
+        $comentarios = Comentario::orderby('data', 'asc')->get();
         return view('comentarios.comentarios', ['comentarios' => $comentarios]);
+
     }
 
     /**
@@ -30,7 +32,11 @@ class ComentariosController extends Controller
         // $id = auth()->user()->id;
         // $user = User::findorfail($id);
 
-        return view('comentarios.create');
+        $equipamentos = Equipamento::all();
+        $comentarios = Comentario::all();
+        return view('comentarios.create',['equipamentos' => $equipamentos], ['comentarios' => $comentarios]);;
+
+
     }
 
     /**
@@ -41,12 +47,18 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
+        // $filler = $request->only('id');
+        // $equipamento = Equipamento::where($filler);
+        // $filler['id_equipamento'] = $equipamento->id;
+        // Comentario::create($filler);
+        Equipamento::all();
         Comentario::create([
             'permissao' => $request['permissao'],
             'data'=> $request['data'],
             'comentario'=> $request['comentario'],
+            'id_equipamento'=> $request['id_equipamento'],
         ]);
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', "Sucesso! Comentário cadastrado para o equipamento.");
 
     }
 
@@ -58,10 +70,11 @@ class ComentariosController extends Controller
      */
     public function show($id)
     {
+        $equipamentos = Equipamento::all();
         $comentarios = Comentario::where('id', $id)->first();
         if (!empty($comentarios))
         {
-            return view('comentarios.show', ['comentarios'=>$comentarios]);
+            return view('comentarios.show', ['comentarios'=>$comentarios],['equipamentos'=>$equipamentos]);
         }
         else
         {
@@ -81,7 +94,7 @@ class ComentariosController extends Controller
         if (!empty($comentarios)) {
             return view('comentarios.edit', ['comentarios' => $comentarios]);
         } else {
-            return redirect()->route('comentarios-index');
+            return redirect()->route('home');
         }
     }
 
@@ -98,9 +111,10 @@ class ComentariosController extends Controller
             'permissao'=> $request->permissao,
             'data'=> $request->data,
             'comentario'=> $request->comentario,
+            'id_equipamento'=> $request->id_equipamento,
         ];
         Comentario::where('id', $id)->update($data);
-        return redirect()->route('comentarios-index');
+        return redirect()->route('home');
     }
 
     /**
@@ -112,6 +126,6 @@ class ComentariosController extends Controller
     public function destroy($id)
     {
         Comentario::where('id', $id)->delete();
-        return redirect()->route('comentarios-index');
+        return redirect()->route('home');
     }
 }

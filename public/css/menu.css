@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+
+body {
+    background-color: #f0f0f0;
+}
+
+img {
+    width: 14rem;
+    border: 3px solid #cce2e2;
+    object-fit: fill;
+}
+
+.equipBTN {
+    width: auto;
+    height: 40px;
+}
+
+.modal-content {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #44babc;
+}
+
+.equipHR {
+	border: 1px solid #44babc;
+}
+
+.menu {
+    width: 5rem;
+    height: 25rem;
+}
+
+.menu a {
+    border-radius: 4rem;
+    background-color: #44BABC;
+}
